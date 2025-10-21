@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Couple Quiz — Setup</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Couple Quiz <span class="by">— created by Charles</span></div>
+    <div class="small-muted">Owner Setup</div>
+  </header>
+
+  <main class="container padded">
+    <h2>Write your questions & answers (up to 10)</h2>
+    <p class="muted">Type the question and the correct answer (partner will try to match your answers).</p>
+
+    <form id="qaForm" onsubmit="return false;">
+      <div id="qaList">
+        <!-- JS will populate 10 rows -->
+      </div>
+
+      <div class="row-between">
+        <button id="generateLink" class="btn primary">Generate Shareable Link</button>
+        <button id="clearBtn" class="btn ghost">Clear All</button>
+      </div>
+
+      <div id="linkBox" class="link-box hidden">
+        <label>Share this link with your partner:</label>
+        <textarea id="shareLink" readonly rows="2"></textarea>
+        <div class="row-between">
+          <button id="copyLink" class="btn">Copy Link</button>
+          <button id="previewQuiz" class="btn">Preview Quiz</button>
+        </div>
+      </div>
+    </form>
+
+    <hr />
+
+    <h3>Saved quizzes</h3>
+    <p class="muted">You can store a quiz locally — it will appear below.</p>
+    <div id="savedList"></div>
+  </main>
+
+  <footer class="footer">Tip: The generated link contains the quiz data encoded. Treat it like a private link.</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
