@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Couple Quiz — Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-center">
+  <div class="card small">
+    <h1 class="brand">Couple Quiz</h1>
+    <p class="muted">Created by <strong>Charles</strong></p>
+
+    <div class="form-row">
+      <label for="ownerName">Your name (owner)</label>
+      <input id="ownerName" placeholder="Charles" value="Charles" />
+    </div>
+
+    <div class="form-row">
+      <label for="password">Enter password to setup</label>
+      <input id="password" type="password" placeholder="Password" />
+    </div>
+
+    <div class="actions">
+      <button id="loginBtn" class="btn">Login to Setup</button>
+    </div>
+
+    <p class="hint">Password for owner: <strong>game</strong></p>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+const scriptURL = "https://script.google.com/macros/s/AKfycby9J7K2iXQ_vK3EMwc37l_M-S905y04nAUPHlEbr1PdCTv1COrWq8RDGg7APHT1KvVs/exec";
+
+document.getElementById("quizForm").addEventListener("submit", e => {
+  e.preventDefault();
+
+  const formData = new FormData(e.target);
+  fetch(scriptURL, { method: "POST", body: formData })
+    .then(response => alert("✅ Answers submitted successfully!"))
+    .catch(error => alert("❌ Error! Try again later."));
+});
+</script>
+
+</body>
+</html>
